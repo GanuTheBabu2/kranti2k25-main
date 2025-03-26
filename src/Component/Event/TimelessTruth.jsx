@@ -46,7 +46,7 @@ export default function TimelessTruths() {
   };
 
   const checkTeamLimit = async () => {
-     setIsSubmitting(true); // Disable the button
+  
     try {
       const res = await axios.get(
         import.meta.env.VITE_BACKEND_URL + "/timeless_truth/count"
@@ -57,8 +57,6 @@ export default function TimelessTruths() {
     } catch (error) {
       console.error("Error checking team limit", error);
       toast.error("Failed to check team limit.");
-    }finally{
-      setIsSubmitting(false); 
     }
   };
 
@@ -109,7 +107,7 @@ export default function TimelessTruths() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+       setIsSubmitting(true); // Disable the button
     try {
       const res = await axios.post(
         import.meta.env.VITE_BACKEND_URL + "/timeless_truth",
@@ -164,6 +162,8 @@ export default function TimelessTruths() {
       } else {
         toast.error("Something went wrong");
       }
+    }finally{
+      setIsSubmitting(false); 
     }
   };
 
