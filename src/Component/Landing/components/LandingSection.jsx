@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import SmallCountdown from './SmallCountdown'; // Import the new countdown component
+import SmallCountdown from "./SmallCountdown"; // Import countdown component
 
 function LandingSection() {
   const videoRef = useRef(null);
@@ -11,7 +11,7 @@ function LandingSection() {
   }, []);
 
   return (
-    <div className="relative h-screen flex items-center justify-center md:justify-start text-center md:text-left"> {/* Changed md:justify-end to md:justify-start and md:text-right to md:text-left */}
+    <div className="relative h-screen flex items-end md:items-center justify-center md:justify-start text-center md:text-left">
       {/* Background Video */}
       <video
         ref={videoRef}
@@ -24,24 +24,24 @@ function LandingSection() {
         Your browser does not support the video tag.
       </video>
 
+      {/* Gradient Overlay for Better Text Visibility */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/60 to-black"></div>
+
       {/* Text Content */}
-      <div className="relative z-10 px-4 md:pl-12 flex flex-col items-center md:items-start justify-center h-full"> {/* Changed md:pr-12 to md:pl-12 and md:items-end to md:items-start */}
-        {/* Container for text and countdown */}
-        <div className="bg-black bg-opacity-50 md:bg-opacity-0 p-4 rounded-md flex flex-col items-center md:items-start max-w-lg md:max-w-none"> {/* Changed md:items-end to md:items-start */}
-          <h1 className="text-5xl md:text-4xl font-bold text-white mobile-title">
+      <div className="relative z-10 px-4 md:pl-12 flex flex-col items-center md:items-start justify-end md:justify-center h-full pb-10 md:pb-0">
+        <div className="p-4 rounded-md flex flex-col items-center md:items-start max-w-lg md:max-w-none text-box">
+          <h1 className="text-6xl md:text-8xl font-bold text-white uppercase">
             KRANTI 2K25
           </h1>
-          {/* Conditionally render the description text for larger screens */}
-          <p className="text-lg md:text-l text-gray-200 mt-2 hidden md:block">
+          <p className="text-lg md:text-xl text-gray-200 mt-2 hidden md:block">
             A National Level Technical Symposium
           </p>
-          {/* Add the small countdown component here */}
           <SmallCountdown />
         </div>
       </div>
 
-      {/* Scroll Down Indicator */}
-      <div className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 text-white text-center scroll-down-indicator">
+      {/* Scroll Down Indicator (Hidden on Mobile) */}
+      <div className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 text-white text-center hidden md:flex flex-col items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-10 w-10 md:h-12 md:w-12 animate-bounce text-white drop-shadow-lg"
@@ -56,11 +56,17 @@ function LandingSection() {
             d="M19 14l-7 7m0 0l-7-7m7 7V3"
           />
         </svg>
-        {/* Changed text color for better visibility */}
         <span className="block text-lg md:text-xl font-semibold mt-2 text-white drop-shadow-md">
           Scroll Down
         </span>
       </div>
+
+      {/* Styles */}
+      <style jsx>{`
+        .text-box {
+          mix-blend-mode: screen;
+        }
+      `}</style>
     </div>
   );
 }
