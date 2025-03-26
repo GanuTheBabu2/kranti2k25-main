@@ -195,7 +195,8 @@ export default function CyberHeist() {
             ))}
           </ul>
         </div>
-
+        <br />
+        <p style={{ color: "white" }}>🎉 Win Exciting Cash Prizes! 💰 Participate & Claim Your Rewards! 🚀</p>
         <div className="mt-6">
           <h2 className="text-xl font-semibold text-purple-400">
             Event Coordinators

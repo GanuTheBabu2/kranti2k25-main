@@ -194,6 +194,7 @@ export default function LyricQuest() {
             ))}
           </ul>
         </div>
+        
         <div className="mt-6">
           <h2 className="text-xl font-semibold text-purple-400">Rounds</h2>
           <ul className="mt-2 text-white list-disc list-inside">
@@ -210,6 +211,7 @@ export default function LyricQuest() {
             ))}
           </ul>
         </div>
+        <p style={{ color: "white" }}>🎉 Win Exciting Cash Prizes! 💰 Participate & Claim Your Rewards! 🚀</p>
 
         <div className="mt-6">
           <h2 className="text-xl font-semibold text-purple-400">

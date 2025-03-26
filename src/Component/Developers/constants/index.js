@@ -16,16 +16,16 @@ import {
 // === TEAM STRUCTURE / EXPERIENCES ===
 const experiences = [
   {
-    title: "Overall Event Coordinators",
-    company_name: "Coordinators",
+    title: "Event Coordinators",
+    company_name: "",
     icon: starbucks,
     iconBg: "#383E56",
-    date: "KRANTI",
+    date: "",
     points: ["YAZHINI PARVATHAM A", "HARI PRASAD S"],
   },
   {
     title: "Treasurers",
-    company_name: "Coordinators",
+    company_name: "",
     icon: treasury,
     iconBg: "#383E56",
     date: "Treasurers",
@@ -33,7 +33,7 @@ const experiences = [
   },
   {
     title: "Sponsors Team",
-    company_name: "Coordinators",
+    company_name: "",
     icon: starbucks,
     iconBg: "#383E56",
     date: "Sponsors Team",
@@ -46,7 +46,7 @@ const experiences = [
   },
   {
     title: "Media Team",
-    company_name: "Coordinators",
+    company_name: "",
     icon: tesla,
     iconBg: "#E6DEDD",
     date: "Media Team",
@@ -59,7 +59,7 @@ const experiences = [
   },
   {
     title: "Food Team",
-    company_name: "Coordinators",
+    company_name: "",
     icon: shopify,
     iconBg: "#383E56",
     date: "Food Team",
@@ -72,7 +72,7 @@ const experiences = [
   },
   {
     title: "Help Desk Team",
-    company_name: "Coordinators",
+    company_name: "",
     icon: meta,
     iconBg: "#E6DEDD",
     date: "Help Desk Team",
@@ -85,7 +85,7 @@ const experiences = [
   },
   {
     title: "Decoration Team",
-    company_name: "Coordinators",
+    company_name: "",
     icon: decoration,
     iconBg: "#E6DEDD",
     date: "Decoration Team",
@@ -146,11 +146,11 @@ const projects = [
   },
   {
     name: "VEDHA SREE G",
-    description: "Front end developer",
+    description: "Full-stack developer",
     tags: [
       { name: "react js", color: "blue" },
-      { name: "tailwind", color: "pink" },
-      { name: "Firebase", color: "dark-blue" },
+      { name: "node js", color: "pink" },
+      { name: "Mysql", color: "dark-blue" },
     ],
     image: vedha,
     source_code_link: "https://www.linkedin.com/in/vedha-sree-g-858366245/",
@@ -158,7 +158,7 @@ const projects = [
   },
   {
     name: "AARTHI A P",
-    description: "Front end developer",
+    description: "Full-stack developer",
     tags: [
       { name: "react js", color: "blue" },
       { name: "tailwind", color: "pink" },
