@@ -45,6 +45,7 @@ export default function TimelessTruths() {
   };
 
   const checkTeamLimit = async () => {
+  
     try {
       const res = await axios.get(
         import.meta.env.VITE_BACKEND_URL + "/timeless_truth/count"
@@ -105,7 +106,6 @@ export default function TimelessTruths() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const res = await axios.post(
         import.meta.env.VITE_BACKEND_URL + "/timeless_truth",
