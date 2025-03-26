@@ -7,6 +7,7 @@ import image from "../Event/images/TimelessTruth.webp";
 
 export default function TimelessTruths() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [teamLimitReached, setTeamLimitReached] = useState(false);
   const [formData, setFormData] = useState({
     teamName: "",
@@ -45,6 +46,7 @@ export default function TimelessTruths() {
   };
 
   const checkTeamLimit = async () => {
+     setIsSubmitting(true); // Disable the button
     try {
       const res = await axios.get(
         import.meta.env.VITE_BACKEND_URL + "/timeless_truth/count"
@@ -55,6 +57,8 @@ export default function TimelessTruths() {
     } catch (error) {
       console.error("Error checking team limit", error);
       toast.error("Failed to check team limit.");
+    }finally{
+      setIsSubmitting(false); 
     }
   };
 
@@ -546,6 +550,7 @@ export default function TimelessTruths() {
 
               <div className="flex justify-center">
                 <button
+                  disabled={isSubmitting}
                   type="submit"
                   className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-6 rounded-lg shadow-[0_0_12px_3px_rgba(168,85,247,0.5)] transition-all"
                 >
