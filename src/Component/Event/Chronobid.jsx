@@ -437,7 +437,7 @@ export default function ChronoBid() {
                 onChange={(e) =>
                   handleInputChange({
                     ...e,
-                    target: { ...e.target, name: "member1_name" },
+                    target: { ...e.target, name: "member3_name" },
                   })
                 }
                 className="w-full p-3 bg-gray-800 border border-purple-400 rounded-md"
@@ -452,7 +452,7 @@ export default function ChronoBid() {
                 onChange={(e) =>
                   handleInputChange({
                     ...e,
-                    target: { ...e.target, name: "member1_phone" },
+                    target: { ...e.target, name: "member3_phone" },
                   })
                 }
                 className="w-full p-3 bg-gray-800 border border-purple-400 rounded-md"
@@ -466,7 +466,7 @@ export default function ChronoBid() {
                 onChange={(e) =>
                   handleInputChange({
                     ...e,
-                    target: { ...e.target, name: "member1_email" },
+                    target: { ...e.target, name: "member3_email" },
                   })
                 }
                 className="w-full p-3 bg-gray-800 border border-purple-400 rounded-md"
