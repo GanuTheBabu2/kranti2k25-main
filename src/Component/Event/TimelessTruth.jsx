@@ -7,6 +7,7 @@ import image from "../Event/images/TimelessTruth.webp";
 
 export default function TimelessTruths() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isloading, setisloading] = useState(false);
   const [teamLimitReached, setTeamLimitReached] = useState(false);
   const [formData, setFormData] = useState({
     teamName: "",
@@ -106,6 +107,7 @@ export default function TimelessTruths() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setisloading(true)
     try {
       const res = await axios.post(
         import.meta.env.VITE_BACKEND_URL + "/timeless_truth",
@@ -149,7 +151,7 @@ export default function TimelessTruths() {
         });
         setIsOpen(false);
         checkTeamLimit();
-      } else if (res.status === 409) {
+      } else if (res.status === 201) {
         toast.error("Team name already exist");
       } else {
         toast.error("Registration failed.");
@@ -161,6 +163,7 @@ export default function TimelessTruths() {
         toast.error("Something went wrong");
       }
     }
+    setisloading(false)
   };
 
   return (
@@ -545,11 +548,16 @@ export default function TimelessTruths() {
               </select>
 
               <div className="flex justify-center">
-                <button
+              <button
                   type="submit"
-                  className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-6 rounded-lg shadow-[0_0_12px_3px_rgba(168,85,247,0.5)] transition-all"
+                  className={`w-full py-3 text-white rounded-md text-md font-semibold transition-all ${
+                    isloading
+                      ? "bg-gray-500 cursor-not-allowed"
+                      : "bg-purple-600 hover:bg-purple-700"
+                  }`}
+                  disabled={isloading}
                 >
-                  Submit
+                  {isloading ? "Submitting..." : "Register"}
                 </button>
               </div>
             </form>
@@ -566,4 +574,4 @@ export default function TimelessTruths() {
       )}
     </div>
   );
-}
+}https://assets.grammarly.com/emoji/v1/1f91d.svg
