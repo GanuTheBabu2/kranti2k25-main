@@ -2,10 +2,18 @@ import React from "react";
 import "./About.css";
 import CollegeImage from "./Meenakshi-Sundararajan-Engineering-College-Chennai.png";
 import KrantiImage from "./ka.png";
+import CSDeptImage from "../../../../public/cs-department.jpg"; // Replace with actual image file
 
 const About = () => {
   return (
     <section className="about-section">
+      <a
+        href="/"
+        className="absolute top-4 left-4 text-xl  text-white-700 hover:text-blue-600 transition-colors  sm:left-3 sm:top-3 sm:px-2 sm:py-1"
+      >
+        <span className="hidden sm:inline">&larr; Back to home</span>
+        <span className="inline sm:hidden text-2xl">&larr;</span>
+      </a>
       <div className="section-header">
         <h1 className="about-title">About</h1>
         <div className="title-divider"></div>
@@ -34,8 +42,31 @@ const About = () => {
         </div>
       </div>
 
-      {/* Kranti Section */}
+      {/* Computer Science Department Section */}
       <div className="about-container reverse-layout">
+        <div className="about-image">
+          <img 
+            src={CSDeptImage} 
+            alt="Computer Science Department" 
+            className="cs-department-image"
+          />
+        </div>
+        <div className="about-content">
+          <h2 className="institution-title"><b>Department of Computer Science & Engineering</b></h2>
+          <p className="institution-description">
+            The Department of Computer Science and Engineering at MSEC is a hub of innovation, creativity, and research.
+            With a strong focus on academic excellence, hands-on learning, and industry collaborations, the department
+            prepares students for the ever-evolving world of technology. Our curriculum is designed to bridge the gap
+            between theory and practice, equipping students with skills in AI, Data Science, Cybersecurity, and more.
+          </p>
+          <p className="institution-description">🔬 Research, innovation, and cutting-edge technology define our vision.</p>
+          <p className="institution-description">👨‍💻 Empowering future tech leaders through skill-based learning.</p>
+          <p className="institution-description">🌎 Industry partnerships for real-world exposure and career growth.</p>
+        </div>
+      </div>
+
+      {/* Kranti Section */}
+      <div className="about-container">
         <div className="about-image">
           <img 
             src={KrantiImage} 

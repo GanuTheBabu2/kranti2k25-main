@@ -100,6 +100,7 @@ export default function SympoClock() {
   };
 
   return (
+    
     <div
       className="relative flex flex-col items-center space-y-12 py-12 text-white overflow-hidden"
       style={{
@@ -107,7 +108,13 @@ export default function SympoClock() {
         background: "linear-gradient(90deg, #3d0a3d 50%, #0a1a3d 50%)",
       }}
     >
-      
+      <a
+  href="/"
+  className="absolute top-4 left-4 text-xl text-white hover:text-blue-400 transition-colors sm:left-3 sm:top-3 sm:px-2 sm:py-1 cursor-pointer select-none"
+>
+  <span className="hidden sm:inline">&larr; Back to home</span>
+  <span className="inline sm:hidden text-2xl">&larr;</span>
+</a>
       {/* Neon grid lines with enhanced glow */}
       <div
         className="fixed inset-0 z-0 opacity-30"
