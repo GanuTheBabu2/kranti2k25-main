@@ -4,10 +4,10 @@ import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 import image from "./images/chronobid.webp";
 
-
 export default function ChronoBid() {
   const [isOpen, setIsOpen] = useState(false);
   const [teamLimitReached, setTeamLimitReached] = useState(false);
+  const [isloading, setisloading] = useState(false);
   const [formData, setFormData] = useState({
     teamName: "",
     event: "Chrono bid",
@@ -100,50 +100,36 @@ export default function ChronoBid() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setisloading(true);
+  
     try {
       const res = await axios.post(
         import.meta.env.VITE_BACKEND_URL + "/chrono_bid",
         formData
       );
+  
       if (res.status === 200) {
         toast.success("Registration successful!");
         setFormData({
           teamName: "",
           event: "Chrono bid",
-          member1: {
-            name: "",
-            phone: "",
-            email: "",
-            collegeName: "",
-            year: "",
-          },
-          member2: {
-            name: "",
-            phone: "",
-            email: "",
-            collegeName: "",
-            year: "",
-          },
-          member3: {
-            name: "",
-            phone: "",
-            email: "",
-            collegeName: "",
-            year: "",
-          },
+          member1: { name: "", phone: "", email: "", collegeName: "", year: "" },
+          member2: { name: "", phone: "", email: "", collegeName: "", year: "" },
+          member3: { name: "", phone: "", email: "", collegeName: "", year: "" },
         });
         setIsOpen(false);
         checkTeamLimit();
-      } else {
-        toast.error("Registration failed.");
+      }else if (res.status === 201) {
+        toast.error("Team name already exists.");
+      } else{
+        toast.error("Registration failed")
       }
     } catch (err) {
-      console.error("Registration error:", err);
-      toast.error(err.response?.data || "Something went wrong.");
+      toast.error("Something went wrong.");
+    } finally {
+      setisloading(false);
     }
-  };
-
+  };  
   const neonPulse = {
     animate: {
       boxShadow: [
@@ -497,9 +483,14 @@ export default function ChronoBid() {
               <div className="flex justify-center">
                 <button
                   type="submit"
-                  className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-6 rounded-lg shadow-[0_0_12px_3px_rgba(168,85,247,0.5)] transition-all"
+                  className={`w-full py-3 text-white rounded-md text-md font-semibold transition-all ${
+                    isloading
+                      ? "bg-gray-500 cursor-not-allowed"
+                      : "bg-purple-600 hover:bg-purple-700"
+                  }`}
+                  disabled={isloading}
                 >
-                  Submit
+                  {isloading ? "Submitting..." : "Register"}
                 </button>
               </div>
             </form>
