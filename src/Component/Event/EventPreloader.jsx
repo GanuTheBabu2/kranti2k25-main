@@ -16,7 +16,6 @@ const FullPageEventPreloader = ({ eventName, eventImage, onComplete }) => {
       <motion.div 
         className="relative w-64 h-64 flex items-center justify-center rounded-full border-4 border-pink-500"
         animate={{
-          scale: [1, 1.1, 1],
           boxShadow: [
             "0 0 10px rgba(255, 0, 255, 0.5)",
             "0 0 50px rgba(255, 0, 255, 0.7)",
@@ -66,7 +65,7 @@ const FullPageEventPreloader = ({ eventName, eventImage, onComplete }) => {
             textShadow: "0 0 15px rgba(255, 0, 255, 0.7)"
           }}
         >
-          Loading {eventName}
+        {eventName}
         </h2>
         <p 
           className="text-lg text-cyan-300 mt-2"
