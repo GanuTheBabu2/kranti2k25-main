@@ -11,13 +11,13 @@ body {
 }
 
 .explore-events-bg {
-  background-image: url('/EventBG.jpg');
+  
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 600px; /* Adjust as needed */
+  height: 300px; /* Adjust as needed */
   background-blend-mode: overlay;
-  background-color: rgba(0, 0, 0, 0.5); /* Add a dark overlay */
+  
 }
 
 .countdown-bg {

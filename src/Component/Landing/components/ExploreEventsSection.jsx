@@ -2,7 +2,7 @@ import React from "react";
 
 function ExploreEventsSection() {
   return (
-    <div className="py-12 text-left explore-events-bg">
+    <div className="py-12 text-left bg-gray-900 bg-opacity-50 backdrop-filter backdrop-blur-lg explore-events-bg">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-sky-500">Explore Events</h2>
         <p className="mt-4 text-white opacity-70">

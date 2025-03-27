@@ -94,7 +94,7 @@ function Location() {
       </div>
     </section>
     {/* Footer Section */}
-    <footer className="bg-gray-900 text-gray-300 py-6 text-center">
+    <footer className="bg-gray-900 text-gray-300 bg-opacity-50 backdrop-filter backdrop-blur-lg py-6 text-center">
     <div className="container mx-auto px-4">
       <p className="text-lg font-semibold">Kranti 2K25</p>
       <p className="text-sm">

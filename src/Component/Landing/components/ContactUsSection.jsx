@@ -52,7 +52,7 @@ function FAQSection() {
   };
 
   return (
-    <div className="py-12 text-left bg-gray-900">
+    <div className="py-12 text-left bg-gray-900 bg-opacity-50 backdrop-filter backdrop-blur-lg">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-sky-500">FAQs</h2>
         <div className="mt-6">
