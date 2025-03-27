@@ -1,42 +1,66 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Preloader({ isLoading }) {
-  // Define inline styles for multi-color effect
-  const colors = ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FF6B6B', '#FFD166', '#06D6A0', '#118AB2', '#073B4C']; // Example colors
-  const text = "KRANTI-2K25";
+  // List of images located in the public folder
+  const images = [
+    '/img1.png', '/img2.png', '/img3.png', '/img4.png',
+    '/img5.png', '/img6.png', '/img7.png', '/img8.png'
+  ];
 
-  // IMPORTANT: Replace '/background-video.mp4' with the actual path to your video file in the /public directory
-  const videoSrc = '/background-video.mp4';
+  const [currentImage, setCurrentImage] = useState(images[0]);
+
+  // Preload images
+  useEffect(() => {
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
+  useEffect(() => {
+    let currentIndex = 0;
+    let interval;
+
+    if (isLoading) {
+      // Fast transition loop (150ms per image)
+      interval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        setCurrentImage(images[currentIndex]);
+      }, 150);
+    } else {
+      clearInterval(interval);
+    }
+
+    return () => clearInterval(interval);
+  }, [isLoading]);
 
   return (
     <div
-      className={`fixed inset-0 z-50 overflow-hidden transition-opacity duration-1000 ${
-        isLoading ? 'opacity-100' : 'opacity-0 pointer-events-none' // Fade out preloader container
+      className={`fixed inset-0 z-50 flex items-center justify-center bg-black transition-opacity duration-1000 ${
+        isLoading ? 'opacity-100' : 'opacity-0 pointer-events-none'
       }`}
+      style={{ overflow: 'hidden' }}
     >
-      {/* Background Video */}
-      <video
-        src={videoSrc}
-        autoPlay
-        muted
-        loop
-        playsInline // Important for iOS playback
-        className="absolute top-0 left-0 w-full h-full object-cover z-0" // Position video as background
-      />
-
-      {/* Text Overlay */}
-      <div className="relative z-10 flex items-center justify-center h-full"> {/* Center content */}
+      <div className="relative p-4">
         <h1
-          className={`text-5xl md:text-7xl font-bold mix-blend-screen transition-transform duration-1000 ease-in-out ${ // Apply blend mode
-            isLoading ? 'translate-y-0' : '-translate-y-full' // Move text up on exit
-          }`}
-          style={{ willChange: 'transform' }} // Optimize animation
+          style={{
+            fontFamily: 'Arial, sans-serif', // Replace with your custom font if needed
+            fontSize: '10vw', // Responsive font size
+            fontWeight: 'bold',
+            textTransform: 'uppercase',
+            color: 'transparent',
+            border: '2px solid white',
+            backgroundImage: `url(${currentImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            WebkitBackgroundClip: 'text',
+            backgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            textAlign: 'center',
+            whiteSpace: 'nowrap',
+          }}
         >
-          {text.split('').map((char, index) => (
-            <span key={index} style={{ color: colors[index % colors.length] }}>
-              {char}
-            </span>
-          ))}
+          KRANTI 2K25
         </h1>
       </div>
     </div>
