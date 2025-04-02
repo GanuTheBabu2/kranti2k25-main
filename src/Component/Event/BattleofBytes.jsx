@@ -104,8 +104,9 @@ export default function BattleofBytes() {
     }
   };
   const handleBackClick = () => {
-    navigate(-1);  // Go back to previous page
-  };
+  navigate("/event");
+};
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
