@@ -20,22 +20,19 @@ export default function ChronoBid() {
   });
 
   const event = {
-    title: "Chrono Bid",
+    title: "Hyperstrike",
     img: image,
     date: "April 15, 2025",
-    venue: "CSE CR-3",
-    description: "Bid Against Time, Build Your Dream Team!",
+    venue: "CSE CR-4",
+    description: "Strategize, Select, Succeed – Build the Perfect Squad!",
     rules: [
       "Each team consists of 2 to 3 members.",
-      "A team must acquire a minimum of 7 players and can have a maximum of 15 players.",
-      "Each team will be given a fixed amount of dummy cash to bid on players.",
-      "Bidding will take place in 3 set amounts.",
-      "Once a team's budget is exhausted, they can no longer place bids.",
-      "The auction will feature a pre-determined list of players available for bidding.",
-      "Each team must ensure they meet the minimum squad requirement before the auction ends.",
-      "Teams will earn points based on their player selections.",
-      "The team with the most points at the end of the auction will be declared the winner.",
-      "Teams must adhere to fair bidding practices.",
+      "Teams will be provided with a pool of 500 players to form their squad.",
+      "Players must be distributed among teams based on strategic selection criteria decided by the teams themselves.",
+      "Each team must meet the minimum squad requirement before the selection process ends.",
+      "Teams will earn points based on the overall strength and balance of their squad.",
+      "The team with the most well-structured and optimized squad will be declared the winner.",
+      "Fair play and strategic decision-making are essential throughout the process.",
       "Any rule violation may lead to disqualification.",
     ],
     coordinator: [
@@ -304,6 +301,15 @@ export default function ChronoBid() {
             </p>
           ))}
         </div>
+
+        
+
+        <h2 className="text-xl font-semibold text-purple-400 mt-3">
+            Check Out
+          </h2>
+        <p className="text-lg mb-3 text-white">
+        Don't miss out—check your inbox for your registered mail, and if it's not there, be sure to peek in the spam folder!
+        </p>
 
         <div className="flex justify-center mt-6">
           <button

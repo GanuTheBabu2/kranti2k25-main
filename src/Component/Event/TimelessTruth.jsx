@@ -306,6 +306,13 @@ export default function TimelessTruths() {
           ))}
         </div>
 
+        <h2 className="text-xl font-semibold text-purple-400 mt-3">
+            Check Out
+          </h2>
+        <p className="text-lg mb-3 text-white">
+        Don't miss out—check your inbox for your registered mail, and if it's not there, be sure to peek in the spam folder!
+        </p>
+
         <div className="flex justify-center mt-6">
           <button
             onClick={() => setIsOpen(true)}

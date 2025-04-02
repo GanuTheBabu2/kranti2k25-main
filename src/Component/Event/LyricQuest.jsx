@@ -19,7 +19,7 @@ export default function LyricQuest() {
   });
 
   const event = {
-    title: "Lyric Quest",
+    title: "Battle of Bytes",
     img: image,
     date: "April 15, 2025",
     venue: "CSE CR-2",

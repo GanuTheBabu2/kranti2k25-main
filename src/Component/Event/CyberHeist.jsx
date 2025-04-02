@@ -27,13 +27,13 @@ export default function CyberHeist() {
       "Step into the unknown and break free from the time loop! Solve challenging paradoxical puzzles and escape before time resets.",
     rules: [
       "Eligibility: Open to teams of 1-2 members.",
-      "The judges’ decisions are final and cannot be challenged.",
+      "The judge's decision is final and cannot be challenged.",
     ],
     rounds: [
       {
         title: "Round 1: Data Breach Investigation",
         rules: [
-       "Participants will recive cyber breach report, they must analyse the data to find details like hacker's IP address,hidden messages,method of breach and accessed files",
+       "Participants will receive cyber breach report, they must analyse the data to find details like hacker's IP address,hidden messages,method of breach and accessed files",
         ],
       },
       {
@@ -286,6 +286,13 @@ export default function CyberHeist() {
             </p>
           ))}
         </div>
+
+        <h2 className="text-xl font-semibold text-purple-400 mt-3">
+            Check Out
+          </h2>
+        <p className="text-lg mb-3 text-white">
+        Don't miss out—check your inbox for your registered mail, and if it's not there, be sure to peek in the spam folder!
+        </p>
 
         <div className="flex justify-center mt-6">
           <button

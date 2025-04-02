@@ -1,55 +1,70 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
-import image from "../Event/images/interstellar.webp";
+import toast, { Toaster } from "react-hot-toast";
+import image from "../Event/images/lyric-quest.webp";
 import { ChevronLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";  // Added for back navigation
 
-export default function InterstellarHarmonics() {
+export default function BattleofBytes() {
   const navigate = useNavigate();  // Added for back navigation
   const [isOpen, setIsOpen] = useState(false);
   const [isloading, setisloading] = useState(false);
   const [teamLimitReached, setTeamLimitReached] = useState(false);
   const [formData, setFormData] = useState({
     teamName: "",
-    event: "Quanum Codeshift",
+    event: "Battle of Bytes",
     member1: { name: "", phone: "", email: "", collegeName: "", year: "" },
     member2: { name: "", phone: "", email: "", collegeName: "", year: "" },
   });
-
   const event = {
-    title: "Quantum Codeshift",
+    title: "Battle of Bytes",
     img: image,
-    date: "April  15, 2025",
-    venue: "CSE Lab 1&2",
-    description: "Crack the Code, Conquer the Quest!",
+    date: "April 15, 2025",
+    venue: "CSE CR-2",
+    description: "Decode, Debate, Dominate!",
     rules: [
-      "Team Formation: Each team must have 1-2 members.",
-      "Participation: All participants must register before the event starts.",
-      "Time Limits: Each round will have a fixed duration. Participants must submit their responses within the given time.",
+      "Each team must consist of two members.",
+      "All participants must register before the event begins.",
+      "The use of mobile phones, internet access, or external assistance is strictly prohibited during the event.",
+      "Time limits for each round must be followed strictly."
     ],
     rounds: [
       {
-        title: "Round 1: Tech Trivia Blitz (Quiz Round)",
-        details: "Multiple-choice questions (MCQs) and rapid-fire questions. Topics include programming concepts, algorithms, debugging, tech history, logic puzzles. Time Limit: 20 minutes. Top 50% of participants proceed to the next round.",
+        title: "Round 1: Silent Cipher ",
+        description: [
+          "One participant wears noise-canceling headphones with instrumental music playing.",
+          "The other teammate is given a tech-related word or phrase and must say it without sound (lip-syncing).",
+          "The first participant must guess the word based on their teammate’s lip movements.",
+          "Each team gets 60 seconds to guess as many words as possible.",
+          "The top-performing teams move on to Round 2."
+        ]
       },
       {
-        title: "Round 2: Decode the Mystery (Coding Logic)",
-        details: "Participants receive a mystery problem statement with partially written code containing logical errors or missing sections. Task: Debug the code, fill in missing logic, and successfully execute the program. Time Limit: 45 minutes. Judged on accuracy, efficiency, and clarity of logic.",
-      },
+        title: "Round 2: Switch Speak ",
+        description: [
+          "Each team is given a tech-related topic (e.g., Artificial Intelligence, Blockchain, Cybersecurity).",
+          "One participant starts by speaking positively about the given topic.",
+          "When the host taps the table (or plays a signal sound), the speaker must instantly switch to speaking negatively about the same topic.",
+          "The speaker can say 'Swap!' at any time to pass the discussion to their teammate, who must continue in the same mode (positive/negative).",
+          "The discussion lasts for 2-3 minutes per team."
+        ]
+      }
     ],
-
-    coordinator: ["Maya M", "Nandhini V", "Pavithra M", "Prathibha K"],
-    contact: ["+91 91234 56789", "+91 90257 70052"],
-  };
-
+    coordinator: [
+      "Pramoth Bavan R",
+      "Pranav N",
+      "Prince Godwin D",
+      "Ram Badri Narayana"
+    ],
+    contact: ["+91 86102 71705", "+91 90257 70052"]
+};
   const checkTeamLimit = async () => {
     try {
       const res = await axios.get(
-        import.meta.env.VITE_BACKEND_URL + "/interstellar_harmonics/count"
+        import.meta.env.VITE_BACKEND_URL + "/Battle/count"
       );
-      if (res.data.count >= 10) {
+      if (res.data.count >= 30) {
         setTeamLimitReached(true);
       }
     } catch (error) {
@@ -97,16 +112,28 @@ export default function InterstellarHarmonics() {
     setisloading(true)
     try {
       const res = await axios.post(
-        import.meta.env.VITE_BACKEND_URL + "/interstellar_harmonics",
+        import.meta.env.VITE_BACKEND_URL + "/Battles",
         formData
       );
       if (res.status === 200) {
-        toast.success("🎶 Registration successful!");
+        toast.success("Registration successful!");
         setFormData({
           teamName: "",
-          event: "Quanum Codeshift",
-          member1: { name: "", phone: "", email: "" },
-          member2: { name: "", phone: "", email: "" },
+          event: "Battle of Bytes",
+          member1: {
+            name: "",
+            phone: "",
+            email: "",
+            collegeName: "",
+            year: "",
+          },
+          member2: {
+            name: "",
+            phone: "",
+            email: "",
+            collegeName: "",
+            year: "",
+          },
         });
         setIsOpen(false);
         checkTeamLimit();
@@ -117,73 +144,73 @@ export default function InterstellarHarmonics() {
       }
     } catch (err) {
       console.error("Registration error:", err);
-      toast.error(err.response?.data || "Something went wrong.");
+      toast.error("Something went wrong.");
     }
     setisloading(false)
   };
 
   return (
     <div className="bg-gradient-to-br from-black via-gray-900 to-black min-h-screen flex items-center justify-center px-6 py-10 overflow-hidden relative">
-        <motion.div
-         className="fixed top-4 left-4 z-50 cursor-pointer group"
-         onClick={handleBackClick}
-         whileHover={{ scale: 1.1 }}
-         whileTap={{ scale: 0.9 }}
-       >
-         <div className="relative">
-           {/* Quantum Distortion Effect */}
-           <motion.div
-             className="absolute -inset-2 bg-cyan-500 rounded-full opacity-0 group-hover:opacity-20"
-             animate={{
-               rotate: [0, 360],
-               scale: [1, 1.2, 1],
-             }}
-             transition={{
-               duration: 2,
-               repeat: Infinity,
-               ease: "easeInOut",
-             }}
-           />
-           
-           {/* Time Warp Glow */}
-           <motion.div
-             className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full opacity-0 group-hover:opacity-30 blur-md"
-             animate={{
-               scale: [1, 1.2, 1],
-               opacity: [0, 0.3, 0],
-             }}
-             transition={{
-               duration: 2,
-               repeat: Infinity,
-               ease: "easeInOut",
-             }}
-           />
-       
-           {/* Back Button Container */}
-           <div 
-             className="relative bg-black/70 p-2 rounded-full border-2 border-cyan-400/50 group-hover:border-cyan-400"
-             style={{
-               boxShadow: "0 0 5px rgba(0,255,255,0.2), inset 0 0 5px rgba(0,255,255,0.1)",
-             }}
-           >
-             <ChevronLeft 
-               className="text-cyan-300 group-hover:text-cyan-100 transition-colors" 
-               size={24} 
-             />
-           </div>
-         </div>
-         
-         {/* Tooltip */}
-         <div 
-           className="absolute left-full ml-2 top-1/2 -translate-y-1/2 bg-black/70 px-3 py-1 rounded-md text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-           style={{
-             borderColor: "rgba(0,255,255,0.2)",
-             boxShadow: "0 0 5px rgba(0,255,255,0.1)",
-           }}
-         >
-           Escape Time Loop
-         </div>
-       </motion.div>
+         <motion.div
+          className="fixed top-4 left-4 z-50 cursor-pointer group"
+          onClick={handleBackClick}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <div className="relative">
+            {/* Quantum Distortion Effect */}
+            <motion.div
+              className="absolute -inset-2 bg-cyan-500 rounded-full opacity-0 group-hover:opacity-20"
+              animate={{
+                rotate: [0, 360],
+                scale: [1, 1.2, 1],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+            
+            {/* Time Warp Glow */}
+            <motion.div
+              className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full opacity-0 group-hover:opacity-30 blur-md"
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0, 0.3, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+        
+            {/* Back Button Container */}
+            <div 
+              className="relative bg-black/70 p-2 rounded-full border-2 border-cyan-400/50 group-hover:border-cyan-400"
+              style={{
+                boxShadow: "0 0 5px rgba(0,255,255,0.2), inset 0 0 5px rgba(0,255,255,0.1)",
+              }}
+            >
+              <ChevronLeft 
+                className="text-cyan-300 group-hover:text-cyan-100 transition-colors" 
+                size={24} 
+              />
+            </div>
+          </div>
+          
+          {/* Tooltip */}
+          <div 
+            className="absolute left-full ml-2 top-1/2 -translate-y-1/2 bg-black/70 px-3 py-1 rounded-md text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            style={{
+              borderColor: "rgba(0,255,255,0.2)",
+              boxShadow: "0 0 5px rgba(0,255,255,0.1)",
+            }}
+          >
+            Escape Time Loop
+          </div>
+        </motion.div>
       <Toaster
         position="top-center"
         reverseOrder={false}
@@ -235,20 +262,25 @@ export default function InterstellarHarmonics() {
             ))}
           </ul>
         </div>
+        
         <div className="mt-6">
           <h2 className="text-xl font-semibold text-purple-400">Rounds</h2>
           <ul className="mt-2 text-white list-disc list-inside">
             {event.rounds.map((round, index) => (
               <li key={index} className="mt-1">
                 <span className="font-medium">{round.title}</span>
-                <br/>
-                <p>{round.details}</p>
+                <br />
+                <p>{round.description[0]}</p>
+                <p>{round.description[1]}</p>
+                <p>{round.description[2]}</p>
+                <p>{round.description[3]}</p>
+                <br />
               </li>
             ))}
           </ul>
         </div>
-        <br />
-        <p style={{ color: "white" }}>🎉 Win Exciting Cash Prizes! 💰 Participate & Claim Your Rewards! 🚀</p>
+        {/* <p style={{ color: "white" }}>🎉 Win Exciting Cash Prizes! 💰 Participate & Claim Your Rewards! 🚀</p> */}
+
         <div className="mt-6">
           <h2 className="text-xl font-semibold text-purple-400">
             Event Coordinators
@@ -329,10 +361,10 @@ export default function InterstellarHarmonics() {
                 className="w-full p-3 bg-gray-800 border border-purple-400 rounded-md"
               />
               <input
+                name="member1_phone"
                 type="tel"
                 pattern="\d{10}"
                 maxLength="10"
-                name="member1_phone"
                 placeholder="Phone"
                 required
                 value={formData.member1.phone}
@@ -389,6 +421,7 @@ export default function InterstellarHarmonics() {
                 type="text"
                 name="member2_name"
                 placeholder="Name"
+                required
                 value={formData.member2.name}
                 onChange={(e) =>
                   handleInputChange({
@@ -402,6 +435,7 @@ export default function InterstellarHarmonics() {
                 type="tel"
                 pattern="\d{10}"
                 maxLength="10"
+                required
                 name="member2_phone"
                 placeholder="Phone"
                 value={formData.member2.phone}
@@ -417,6 +451,7 @@ export default function InterstellarHarmonics() {
                 type="email"
                 name="member2_email"
                 placeholder="Email"
+                required
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                 value={formData.member2.email}
                 onChange={(e) =>
@@ -431,12 +466,14 @@ export default function InterstellarHarmonics() {
                 type="text"
                 name="member2_collegeName"
                 placeholder="College Name"
+                required
                 value={formData.member2.collegeName}
                 onChange={handleInputChange}
                 className="w-full p-3 bg-gray-800 border border-purple-400 rounded-md"
               />
               <select
                 name="member2_year"
+                required
                 value={formData.member2.year}
                 onChange={handleInputChange}
                 className="w-full p-3 bg-gray-800 border border-purple-400 rounded-md"

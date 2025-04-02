@@ -23,33 +23,33 @@ export default function Pictoword() {
     title: "Pictoword",
     img: image,
     date: "April 15, 2025",
-    venue: "CSE CR-4",
+    venue: "CSE CR-3",
     description: "Connect the Pics, Guess the Word, Beat the Clock!",
     rules: [
       "Each team must consist of 2-3 members.",
-      "Mobile phones are allowed only for answering the questions.",
-      "Participants must answer within 60 seconds for each question.",
-      "3 points for each correct answer, no points for incorrect answer, and the next team can attempt.",
+      "Each team will be given a description of an image to be generated.",
+      "Based on the description, players must indirectly prompt the AI to generate the image.",
+      "Points will be awarded to the team which generates the best image.",
       "Any external help will result in disqualification.",
     ],
     rounds: [
       {
-        title: "Round 1: Entertainment Round (20 Questions)",
+        title: "Round 1: Image Prompt Round (10 Questions)",
         description: [
-          "Theme: Movies, Celebrities, Songs"
+          "Theme: General"
         ],
       },
       {
         title: "Round 2: Technical Round (15 Questions)",
         description: [
-          "Theme: Industry-Specific & Technical Terms",
+          "Theme: Industry Specific & Technical Terms"
         ],
       },
     ],
     gameConcept: [
-      "• Players are shown a set of 4 images that share a common link.",
-      "• The link could be a word or phrase comprising words related to entertainment (Movies, Songs, Personalities, etc.), or a theme that all images relate to.",
-      "• Participants should guess the connection based on synonyms, meanings, or related concepts.",
+      "• Players are given a description of an image to be generated.",
+      "• They must indirectly prompt the AI to create the best matching image.",
+      "• The team that generates the most accurate and creative image earns points.",
     ],
     coordinator: [
       "Vaishnavi K V",
@@ -294,7 +294,7 @@ export default function Pictoword() {
           </ul>
         </div>
         <br />
-        <p style={{ color: "white" }}>🎉 Win Exciting Cash Prizes! 💰 Participate & Claim Your Rewards! 🚀</p>
+        {/* <p style={{ color: "white" }}>🎉 Win Exciting Cash Prizes! 💰 Participate & Claim Your Rewards! 🚀</p> */}
         <div className="mt-6">
           <h2 className="text-xl font-semibold text-purple-400">
             Event Coordinators
@@ -314,6 +314,13 @@ export default function Pictoword() {
             </p>
           ))}
         </div>
+
+        <h2 className="text-xl font-semibold text-purple-400 mt-3">
+            Check Out
+          </h2>
+        <p className="text-lg mb-3 text-white">
+        Don't miss out—check your inbox for your registered mail, and if it's not there, be sure to peek in the spam folder!
+        </p>
 
         <div className="flex justify-center mt-6">
           <button

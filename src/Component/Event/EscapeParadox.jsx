@@ -35,13 +35,13 @@ export default function EscapeParadox() {
     title: "Escape Paradox",
     img: escapeimage,
     date: "April 15, 2025",
-    venue: "CSE Lab 1&2",
+    venue: "CSE Lab 3&4",
     description: "An escape room where your brain is the only key…good luck!",
     rounds: [
       {
         title: "Round 1: The Cipher Challenge",
         details:
-          "Non-coding members guess a song from a translated-and-reversed text, then the Coder completes a medium-level coding challenge within a time limit.",
+          "Non-coding members guess a  translated-and-reversed text, then the Coder completes a medium-level coding challenge within a time limit.",
       },
       {
         title: "Round 2: The Treasure Hunt",
@@ -303,6 +303,13 @@ export default function EscapeParadox() {
             </p>
           ))}
         </div>
+
+        <h2 className="text-xl font-semibold text-purple-400 mt-3">
+            Check Out
+          </h2>
+        <p className="text-lg mb-3 text-white">
+        Don't miss out—check your inbox for your registered mail, and if it's not there, be sure to peek in the spam folder!
+        </p>
 
         <div className="flex justify-center mt-6">
           <button

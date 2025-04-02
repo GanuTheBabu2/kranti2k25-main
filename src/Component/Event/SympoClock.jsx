@@ -4,12 +4,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { ChevronLeft } from 'lucide-react';
 import image1 from "../Event/assets/Interstellar-Harmonics.webp";
 import image2 from "../Event/assets/Cyberheist-Time-Rift.webp";
-import image3 from "../Event/assets/Chronobid.webp";
-import image4 from "../Event/assets/Lyric-Quest.webp";
+import image3 from "../Event/assets/Hyperstrike.webp";
+import image4 from "../Event/assets/Byte Battle.webp";
 import image5 from "../Event/assets/Pictoword.webp";
 import image6 from "../Event/assets/Timeless-Truths.webp";
 import image7 from "../Event/assets/Escape Paradox.webp";
-import image8 from "../Event/assets/Meme-Rewind.webp";
+import image8 from "../Event/assets/Vault Heist.webp";
 import EventPreloader from "./EventPreloader"; 
 import { AnimatePresence } from "framer-motion";
 
@@ -19,7 +19,7 @@ const events = [
     tagline: "Crack the code,Conquer the Quest!",
     image: image1,
     path: "/inter",
-    type: "non-tech",
+    type: "tech", // Changed from "non-tech" to "tech"
   },
   {
     name: "Timeless Truths",
@@ -43,17 +43,17 @@ const events = [
     type: "tech",
   },
   {
-    name: "Chrono Bid",
-    tagline: "Time is currency, bid wisely!",
+    name: "Hyper Strike",
+    tagline: "Craft Your Dream Team, Build for Victory!",
     image: image3,
     path: "/chronobid",
-    type: "tech",
+    type: "non-tech", // Changed from "tech" to "non-tech"
   },
   {
-    name: "Lyric Quest",
-    tagline: "Sing, guess, conquer!",
+    name: "Battle Of Bytes",
+    tagline: "Byte by Byte, Word by Word!",
     image: image4,
-    path: "/lyric",
+    path: "/battle",
     type: "non-tech",
   },
   {
@@ -64,10 +64,10 @@ const events = [
     type: "non-tech",
   },
   {
-    name: "MemeRewind",
-    tagline: "Unravel the picture puzzle!",
+    name: "Vault Heist",
+    tagline: "Solve the Clues, Unmask the Heist!",
     image: image8,
-    path: "/meme",
+    path: "/vault",
     type: "non-tech",
   },
 ];
