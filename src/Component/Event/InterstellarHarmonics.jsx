@@ -89,7 +89,7 @@ export default function InterstellarHarmonics() {
     }
   };
   const handleBackClick = () => {
-    navigate(-1);  // Go back to previous page
+    navigate("/event");  // Go back to previous page
   };
 
   const handleSubmit = async (e) => {
