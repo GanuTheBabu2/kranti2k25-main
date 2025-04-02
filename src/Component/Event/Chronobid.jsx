@@ -166,7 +166,7 @@ export default function ChronoBid() {
     },
   };
   const handleBackClick = () => {
-    navigate(-1);  // Go back to previous page
+    navigate("/event");  // Go back to previous page
   };
   return (
     <div className="bg-gradient-to-br from-black via-gray-900 to-black min-h-screen flex items-center justify-center px-6 py-10 overflow-hidden relative">
