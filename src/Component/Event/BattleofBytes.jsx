@@ -113,7 +113,7 @@ export default function BattleofBytes() {
     setisloading(true)
     try {
       const res = await axios.post(
-        import.meta.env.VITE_BACKEND_URL + "/Battles",
+        import.meta.env.VITE_BACKEND_URL + "/Battle",
         formData
       );
       if (res.status === 200) {
