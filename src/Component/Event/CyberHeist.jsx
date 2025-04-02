@@ -136,7 +136,7 @@ export default function CyberHeist() {
     setisloading(false)
   };
   const handleBackClick = () => {
-    navigate(-1);  // Go back to previous page
+    navigate("/event");  // Go back to previous page
   };
 
   return (
