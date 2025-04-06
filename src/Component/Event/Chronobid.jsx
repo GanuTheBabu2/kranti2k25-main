@@ -13,7 +13,7 @@ export default function ChronoBid() {
   const [isloading, setisloading] = useState(false);
   const [formData, setFormData] = useState({
     teamName: "",
-    event: "Chrono bid",
+    event: "Hyperstrike",
     member1: { name: "", phone: "", email: "", collegeName: "", year: "" },
     member2: { name: "", phone: "", email: "", collegeName: "", year: "" },
     member3: { name: "", phone: "", email: "", collegeName: "", year: "" },
