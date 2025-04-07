@@ -46,7 +46,6 @@ export default function TimelessTruths() {
   };
 
   const checkTeamLimit = async () => {
-  
     try {
       const res = await axios.get(
         import.meta.env.VITE_BACKEND_URL + "/timeless_truth/count"
@@ -107,7 +106,7 @@ export default function TimelessTruths() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setisloading(true)
+    setisloading(true);
     try {
       const res = await axios.post(
         import.meta.env.VITE_BACKEND_URL + "/timeless_truth",
@@ -163,7 +162,7 @@ export default function TimelessTruths() {
         toast.error("Something went wrong");
       }
     }
-    setisloading(false)
+    setisloading(false);
   };
 
   return (
@@ -220,7 +219,9 @@ export default function TimelessTruths() {
           </ul>
         </div>
         <br />
-        <p style={{ color: "white" }}>🎉 Win Exciting Cash Prizes! 💰 Participate & Claim Your Rewards! 🚀</p>
+        <p style={{ color: "white" }}>
+          🎉 Win Exciting Cash Prizes! 💰 Participate & Claim Your Rewards! 🚀
+        </p>
         <div className="mt-6">
           <h2 className="text-xl font-semibold text-purple-400">
             Event Coordinators
@@ -548,7 +549,7 @@ export default function TimelessTruths() {
               </select>
 
               <div className="flex justify-center">
-              <button
+                <button
                   type="submit"
                   className={`w-full py-3 text-white rounded-md text-md font-semibold transition-all ${
                     isloading
@@ -574,4 +575,4 @@ export default function TimelessTruths() {
       )}
     </div>
   );
-}https://assets.grammarly.com/emoji/v1/1f91d.svg
+}
