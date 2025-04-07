@@ -5,7 +5,9 @@ import { useMediaQuery } from 'react-responsive';
 const sponsors = [
   "/Sponsor1.jpeg",
   "/Sponsor2.jpeg",
-  "/Sponsor3.jpeg"
+  "/Sponsor3.jpeg",
+  "/Sponsor4.jpeg",
+  "/Sponsor5.jpeg"
 ];
 
 function SpecialThanksSection() {
