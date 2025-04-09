@@ -5,7 +5,7 @@ import { useMediaQuery } from "react-responsive";
 const sponsors = [
   "/Sponsor1.jpeg",
   "/Sponsor2.jpeg",
-  "/Sponsor3.jpeg",
+  "/Sponsor3.jpg",
   "/Sponsor4.jpg",
   "/Sponsor5.jpg",
 ];
