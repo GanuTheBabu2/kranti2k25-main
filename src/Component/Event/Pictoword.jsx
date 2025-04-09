@@ -23,7 +23,7 @@ export default function Pictoword() {
     title: "Pictoword",
     img: image,
     date: "April 15, 2025",
-    venue: "CSE CR-3",
+    venue: "CSE CR-4",
     description: "Connect the Pics, Guess the Word, Beat the Clock!",
     rules: [
       "Each team must consist of 2-3 members.",
