@@ -49,7 +49,7 @@ export default function InterstellarHarmonics() {
       const res = await axios.get(
         import.meta.env.VITE_BACKEND_URL + "/interstellar_harmonics/count"
       );
-      if (res.data.count >= 10) {
+      if (res.data.count >= 15) {
         setTeamLimitReached(true);
       }
     } catch (error) {
